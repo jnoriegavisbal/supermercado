@@ -24,12 +24,12 @@
   </div>
   
   <div class="field">
-    <%= f.label "Correo" %><br />
+    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label "Contraseña" %>
+    <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -37,7 +37,7 @@
   </div>
 
   <div class="field">
-    <%= f.label "Confirmar contraseña" %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
