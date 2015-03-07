@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = current_user.products.order('expdate ASC')
   end
 
   # GET /products/1

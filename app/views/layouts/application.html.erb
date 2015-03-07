@@ -17,7 +17,9 @@
       <ul class="title-area">
         <li class="name">
           <h1>
-            <%= link_to 'Inicio', root_path %>
+            <%= link_to root_path do %>
+              <%= image_tag('home.png', size: "25") %> Home
+            <% end %>
           </h1>
         </li>
         
@@ -38,27 +40,31 @@
         <% end %>
         <ul class="right">
           <% if user_signed_in? %>
-          <li class="active">
-            <%= link_to current_user.name, edit_user_registration_path %>
-          </li>
-           <li>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-          </li>
+              <li class="active">
+                <%= link_to current_user.name, edit_user_registration_path %>
+              </li>
+               <li>
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+              </li>
           
           <% else %>
-          <li class="active">
-            <%= link_to 'Registrese', new_user_registration_path %>
-           </li>
-           <li>
-            <%= link_to 'Sign In', user_session_path %>
-           </li>
+              <li>
+                <%= link_to 'Registrese', new_user_registration_path %>
+               </li>
+               <li class="active">
+                <%= link_to 'Sign In', user_session_path %>
+               </li>
           <% end %>
          </ul>
       </section>
     </nav>
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% flash.each do |name, msg| %>
+      <div data-alert class="alert-box <%= name %>">
+        <%= msg %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
     
     <div class="row">
       <div class="columns large-12">
