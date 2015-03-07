@@ -18,7 +18,7 @@
         <li class="name">
           <h1>
             <%= link_to root_path do %>
-              <%= image_tag('home.png', size: "25") %> Home
+              <%= image_tag('home.png', size: "25") %> Inicio
             <% end %>
           </h1>
         </li>
@@ -44,7 +44,7 @@
                 <%= link_to current_user.name, edit_user_registration_path %>
               </li>
                <li>
-                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+                <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
               </li>
           
           <% else %>
@@ -52,7 +52,7 @@
                 <%= link_to 'Registrese', new_user_registration_path %>
                </li>
                <li class="active">
-                <%= link_to 'Sign In', user_session_path %>
+                <%= link_to 'Iniciar sesión', user_session_path %>
                </li>
           <% end %>
          </ul>

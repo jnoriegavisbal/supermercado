@@ -22,11 +22,11 @@
         
         <%
           diferencia = (product.expdate - Date.today).to_i
-          if diferencia <= 0 then
+          if diferencia < 0 then
         %>
           <td class="Rojo">Vencido</td>
         <%
-          elsif diferencia <= 5 and diferencia >= 1 then
+          elsif diferencia <= 5 and diferencia >= 0 then
         %>
           <td class="Amarillo">Pronto por vencer</td>
         <%
@@ -37,9 +37,9 @@
           end
         %>
         
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', product %></td>
+        <td><%= link_to 'Editar', edit_product_path(product) %></td>
+        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -47,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path, class: 'button radius tiny' %>
+<%= link_to 'Nuevo Producto', new_product_path, class: 'button radius tiny' %>

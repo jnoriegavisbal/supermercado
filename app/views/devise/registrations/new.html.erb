@@ -4,32 +4,32 @@
   <%= devise_error_messages! %>
   
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Nombre" %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :lastname %><br />
+    <%= f.label "Apellido" %><br />
     <%= f.text_field :lastname %>
   </div>
   
   <div class="field">
-    <%= f.label :tel %><br />
+    <%= f.label "Telefono" %><br />
     <%= f.text_field :tel, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :dir %><br />
+    <%= f.label "Direccion" %><br />
     <%= f.text_field :dir %>
   </div>
   
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Correo" %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label "Contraseña" %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -37,12 +37,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label "Confirmar contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" , class: 'button success radius' %>
+    <%= f.submit "Registrarse" , class: 'button success radius' %>
   </div>
 <% end %>
 

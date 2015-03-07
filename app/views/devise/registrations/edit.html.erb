@@ -2,10 +2,30 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+  
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label "Nombre" %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+   <div class="field">
+    <%= f.label "Apellido" %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  
+   <div class="field">
+    <%= f.label "Direccion" %><br />
+    <%= f.text_field :dir %>
+  </div>
+  
+   <div class="field">
+    <%= f.label "Telefono" %><br />
+    <%= f.text_field :tel %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Correo" %><br />
+    <%= f.email_field :email %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,27 +33,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label "Nueva Contraseña" %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label "Confirmar Contraseña Nueva" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label "Contraseña actual" %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update", class: 'button success radius' %>
+    <%= f.submit "Actualizar", class: 'button success radius' %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button alert" %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Regresar", :back %>

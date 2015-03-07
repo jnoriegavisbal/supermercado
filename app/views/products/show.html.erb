@@ -1,24 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripcion:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Expdate:</strong>
+  <strong>Fecha de expiracion:</strong>
   <%= @product.expdate %>
 </p>
 
 <p>
-  <strong>User:</strong>
+    <strong>Estado:</strong>
+    <%
+      diferencia = (@product.expdate - Date.today).to_i
+      if diferencia < 0 then
+    %>
+      <span class="Rojo">Vencido</span>
+    <%
+      elsif diferencia <= 5 and diferencia >= 0 then
+    %>
+      <span class="Amarillo">Pronto por vencer</span>
+    <%
+      else 
+    %>
+      <span class="Verde">Ok</span>
+    <%
+      end
+    %>
+  
+</p>
+
+<p>
+  <strong>Usuario:</strong>
   <%= @product.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Editar', edit_product_path(@product) %> |
+<%= link_to 'Regresar', products_path %>
